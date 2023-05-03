@@ -38,6 +38,7 @@ describe('newGame works correctly', () => {
         game.score = 42;
         game.playerMoves = ['button1', 'button2'];
         game.currentGame = ['button1', 'button2'];
+        game.turnNumber = 42;
         document.getElementById('score').innerText = '42';
         newGame();
     });
@@ -52,6 +53,9 @@ describe('newGame works correctly', () => {
     });
     test('should display 0 for the element with id of score', () => {
         expect(document.getElementById('score').innerText).toEqual(0);
+    });
+    test('should set turnNumber to zero', () => {
+        expect(game.turnNumber).toEqual(0);
     });
 });
 
